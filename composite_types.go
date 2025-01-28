@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 )
 
@@ -53,4 +52,9 @@ func main() {
 	result := v(5)
 	fmt.Println("result=", result)
 
+	fmt.Println("Type Aliases") //useful for readability or transitioning code
+
+	type byteSize int64
+	var x byteSize = 1024
+	fmt.Println("x=", x)
 }

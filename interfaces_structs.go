@@ -26,4 +26,5 @@ func main() {
 	fmt.Println("w=", w)
 	fmt.Println("Area", w.Area())
 	fmt.Println("Perimeter", w.Perimeter())
+
 }

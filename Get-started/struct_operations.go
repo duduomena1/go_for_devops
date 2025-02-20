@@ -35,8 +35,25 @@ func main() {
 	alice.SayHello()
 	bob.SayHello()
 
-	emp := Employee{ID: 1, Name: "John Doe"}
-	t := reflect.TypeOf(emp)
+	emp := &Employee{ID: 1, Name: "John Doe"}
+	t := reflect.TypeOf(*emp)
 	field, _ := t.FieldByName("Name")
 	fmt.Println("Tag on Name field:", field.Tag.Get("json"))
+
+	type Address struct {
+		City  string
+		State string
+	}
+	city := &Address{City: "Salvador", State: "BA"}
+	fmt.Println("Address struct:", city)
+
+	type job struct {
+		Role     string   `json:"Role"`
+		Employee Employee `json:"employee"`
+		person   Person   `json:"person"`
+		address  Address  `json:"Address"`
+	}
+	role := job{"devops", *emp, alice, *city}
+
+	fmt.Println("Job struct:", role)
 }

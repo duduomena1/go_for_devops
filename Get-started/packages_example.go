@@ -1,8 +1,8 @@
 package main
 
 import (
+	"Get-started/shapes"
 	"fmt"
-	"go_for_devops/shapes"
 )
 
 func main() {
